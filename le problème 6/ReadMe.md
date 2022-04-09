@@ -19,7 +19,7 @@ département pour atteindre une perception soit minimale ?*
  - x(i)(j) =< y(j)
  
 ### La fonction objectif :
- - min (la somme de produit 𝐻(i)*D(i)(j)*x(i)(j)
+ - min (la somme de produit 𝐻(i)*D(i)(j)*x(i)(j))
  
    sachant que : H(i) -> le nombre d'habitants a la ville i
                  D(i)(j) -> la distance entre la ville i et j
