@@ -43,6 +43,7 @@ département pour atteindre une perception soit minimale ?*
              (0 0 0 0 0 0 0 0 0 0 1 0)
              (0 0 0 0 0 0 0 0 0 0 1 0));
        - y = (1 0 0 0 0 1 0 0 0 0 1 0);
+       
        ces resultats implique :
        - les ville qui possède des perceptions sont la ville 1 , la ville 6 , la ville 11 .
        - la dépendance des villes :
