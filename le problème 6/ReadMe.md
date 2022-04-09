@@ -25,7 +25,7 @@ département pour atteindre une perception soit minimale ?*
                  D(i)(j) -> la distance entre la ville i et j
                  
 ## La résolution de problème :
-  *Par language OPL , on utulisant " Cplex Studio IDE " *
+  *Par language OPL , on utulisant " Cplex Studio IDE "*
   
   ### la resultat :
   - La fonction objectif : Z = 2438 Km
