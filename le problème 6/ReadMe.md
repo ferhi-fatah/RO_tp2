@@ -19,7 +19,41 @@ département pour atteindre une perception soit minimale ?*
  - x(i)(j) =< y(j)
  
 ### La fonction objectif :
- - min (la somme de produit 𝐻(i)*D(i)(j)*x(i)(j))
+ - min Z = la somme de produit 𝐻(i)*D(i)(j)*x(i)(j)
  
    sachant que : H(i) -> le nombre d'habitants a la ville i
                  D(i)(j) -> la distance entre la ville i et j
+                 
+## La résolution de problème :
+  *Par language OPL , on utulisant " Cplex Studio IDE " *
+  
+  ### la resultat :
+  - La fonction objectif : Z = 2438 Km
+  - les variable :
+         x = ((1 0 0 0 0 0 0 0 0 0 0 0)
+             (1 0 0 0 0 0 0 0 0 0 0 0)
+             (0 0 0 0 0 1 0 0 0 0 0 0)
+             (0 0 0 0 0 1 0 0 0 0 0 0)
+             (1 0 0 0 0 0 0 0 0 0 0 0)
+             (0 0 0 0 0 1 0 0 0 0 0 0)
+             (1 0 0 0 0 0 0 0 0 0 0 0)
+             (0 0 0 0 0 0 0 0 0 0 1 0)
+             (0 0 0 0 0 1 0 0 0 0 0 0)
+             (0 0 0 0 0 0 0 0 0 0 1 0)
+             (0 0 0 0 0 0 0 0 0 0 1 0)
+             (0 0 0 0 0 0 0 0 0 0 1 0));
+        y = (1 0 0 0 0 1 0 0 0 0 1 0);
+        - les ville qui possède des perceptions sont la ville 1 , la ville 6 , la ville 11 .
+        - la dépendance des villes :
+           la ville 1 et depend de la perception 1
+              la ville 2 et depend de la perception 1
+              la ville 3 et depend de la perception 6
+              la ville 4 et depend de la perception 6
+              la ville 5 et depend de la perception 1
+              la ville 6 et depend de la perception 6
+              la ville 7 et depend de la perception 1
+              la ville 8 et depend de la perception 11
+              la ville 9 et depend de la perception 6
+              la ville 10 et depend de la perception 11
+              la ville 11 et depend de la perception 11
+              la ville 12 et depend de la perception 11
