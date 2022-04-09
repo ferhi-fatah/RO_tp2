@@ -45,27 +45,18 @@ département pour atteindre une perception soit minimale ?*
        - y = (1 0 0 0 0 1 0 0 0 0 1 0);
        - les ville qui possède des perceptions sont la ville 1 , la ville 6 , la ville 11 .
        - la dépendance des villes :
-       
-              la ville 1 et depend de la perception 1
+         - la ville 1 et depend de la perception 1
+         - la ville 2 et depend de la perception 1
+         - la ville 3 et depend de la perception 6
+         - la ville 4 et depend de la perception 6 
+         - la ville 5 et depend de la perception 1
+         - la ville 6 et depend de la perception 6
+         - la ville 7 et depend de la perception 1
+         - la ville 8 et depend de la perception 11
+         - la ville 9 et depend de la perception 6
+         - la ville 10 et depend de la perception 11
+         - la ville 11 et depend de la perception 11
+         - la ville 12 et depend de la perception 11
+
+
               
-              la ville 2 et depend de la perception 1
-              
-              la ville 3 et depend de la perception 6
-              
-              la ville 4 et depend de la perception 6
-              
-              la ville 5 et depend de la perception 1
-              
-              la ville 6 et depend de la perception 6
-              
-              la ville 7 et depend de la perception 1
-              
-              la ville 8 et depend de la perception 11
-              
-              la ville 9 et depend de la perception 6
-              
-              la ville 10 et depend de la perception 11
-              
-              la ville 11 et depend de la perception 11
-              
-              la ville 12 et depend de la perception 11
