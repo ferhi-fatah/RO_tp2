@@ -30,7 +30,7 @@ département pour atteindre une perception soit minimale ?*
   ### la resultat :
   - La fonction objectif : Z = 2438 Km
   - les variable :
-         x = ((1 0 0 0 0 0 0 0 0 0 0 0)
+       -  x = ((1 0 0 0 0 0 0 0 0 0 0 0)
              (1 0 0 0 0 0 0 0 0 0 0 0)
              (0 0 0 0 0 1 0 0 0 0 0 0)
              (0 0 0 0 0 1 0 0 0 0 0 0)
@@ -42,11 +42,9 @@ département pour atteindre une perception soit minimale ?*
              (0 0 0 0 0 0 0 0 0 0 1 0)
              (0 0 0 0 0 0 0 0 0 0 1 0)
              (0 0 0 0 0 0 0 0 0 0 1 0));
-             
-        y = (1 0 0 0 0 1 0 0 0 0 1 0);
-        
-        - les ville qui possède des perceptions sont la ville 1 , la ville 6 , la ville 11 .
-        - la dépendance des villes :
+       - y = (1 0 0 0 0 1 0 0 0 0 1 0);
+       - les ville qui possède des perceptions sont la ville 1 , la ville 6 , la ville 11 .
+       - la dépendance des villes :
               la ville 1 et depend de la perception 1
               
               la ville 2 et depend de la perception 1
