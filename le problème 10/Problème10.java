@@ -79,6 +79,10 @@ public class Problème10 {
 				  
 				  
 				 
+					  simplexe.solve();
+					  System.out.println("Voici la valeur de la fonction objectif : "+simplexe.getObjValue() +"\n");
+
+					simplexe.end();
 				 
 				 
 			 }
