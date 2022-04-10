@@ -1,4 +1,4 @@
-## Le problème 06 : Placement de perceptions
+## Le problème 10 :
 
  *Déterminer les deux villes à choisir comme hub de façon à minimiser les coûts de transport*
 
