@@ -36,13 +36,7 @@ public class Problème10 {
 								  cout_ijkm[i][j][k][m]=Distance_ij[i][k]+(Distance_ij[k][m]*0.8)+Distance_ij[m][j];
 								  
 							  }}}};
-							  
-							  IloNumVar[][][][] flow_ijkm = new IloNumVar[nville][nville][nville][];
-							  for(int i=0 ; i < nville; i++) {
-								  for(int j=0 ; j < nville;j++) {
-									  for(int k=0 ; k < nville; k++) {
-										  flow_ijkm[i][j][k] = simplexe.numVarArray(nville, 0, Boolean.MAX_VALUE);
-					        	}}}
+				  IloNumVar[][][][] flow_ijkm;
 				  IloNumExpr[] hub;
 				  
 				// declaration de la fonction objectif
@@ -70,6 +64,10 @@ public class Problème10 {
 							  for(int m=0 ; m < nville; m++) {
 								  simplexe.addLe(flow_ijkm[k][m],hub[k]);
 							  }};
+							  for(int k=0 ; k < nville; k++) {
+								  for(int m=0 ; m < nville; m++) {
+									  simplexe.addLe(flow_ijkm[k][m],hub[m]);
+								  }};
 
 				  
 				  
