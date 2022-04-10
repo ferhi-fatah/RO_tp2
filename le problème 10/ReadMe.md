@@ -22,4 +22,5 @@
   
   ### la resultat :
   - La fonction objectif : Z =  3.9498e+7 euro 
+  - hub=(000011) -> les hub seront a la ville Nice et Paris
  
