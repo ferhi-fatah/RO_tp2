@@ -4,7 +4,7 @@ public class Problème10 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 calcul ();
+		 calcul();
 	}
 		 public static void calcul (){
 			 try {
@@ -12,7 +12,6 @@ public class Problème10 {
 				 
 				 int nville=6;
 				 int nhub=2; 
-				 
 				 int Distance_ij[][]= {{0,945,605,4667,4749,4394},
 				  							 {945,0,866,3726,3806,3448},
 				  							 {605,866,0,4471,4541,4152},
@@ -36,16 +35,21 @@ public class Problème10 {
 								  cout_ijkm[i][j][k][m]=Distance_ij[i][k]+(Distance_ij[k][m]*0.8)+Distance_ij[m][j];
 								  
 							  }}}};
+				
+							 
 				  IloNumVar[][][][] flow_ijkm = new IloNumVar[nville][nville][nville][];
-				  IloNumVar[] hub = new IloNumVar[nville];
-				  hub= simplexe.boolVarArray(nville);
+				 // IloNumVar[] hub = new IloNumVar[nville];
+				//  hub= simplexe.boolVarArray(nville);
 
+				  IloNumVar[] hub = new IloNumVar[nville]; // déclaration des Variables de décision de type boolean
+					for (int i=0;i<nville;i++){
+						hub[nville]= simplexe.boolVar();
+					}
 				  for(int i=0 ; i < nville; i++) {
 					  for(int j=0 ; j < nville;j++) {
 						  for(int k=0 ; k < nville; k++) {		
 							  flow_ijkm[i][j][k] = simplexe.boolVarArray(nville);
 						  }}}
-				  
 				// declaration de la fonction objectif
 				  IloLinearNumExpr objectif = simplexe.linearNumExpr();
 				 // Définition des coefficients de la fonction objectif
@@ -58,39 +62,52 @@ public class Problème10 {
 				 // Définir le type d'otimisation de la fonction ( min )
 				  simplexe.addMinimize(objectif);
 
-
+				// contraint 1
 				  simplexe.addEq(simplexe.sum(hub),2);
-							 
+							
+				// contraint 2
 				  for(int i=0 ; i < nville; i++) {
-					  for(int j=0 ; j < nville;j++) {
-						  simplexe.addEq(simplexe.sum(flow_ijkm[i][j]),1);
-							  }} 
-
-
+					  for(int j=0 ; j < nville; j++) {
 						  for(int k=0 ; k < nville; k++) {
 							  for(int m=0 ; m < nville; m++) {
-								  simplexe.addLe(flow_ijkm[k][m],hub[k]);
-							  }};
-							  for(int k=0 ; k < nville; k++) {
-								  for(int m=0 ; m < nville; m++) {
-									  simplexe.addLe(flow_ijkm[k][m],hub[m]);
-								  }};
+						 simplexe.addEq(simplexe.sum((IloIntSetVar) flow_ijkm[i][j][k][m]),1);
+							  }} }}
+
+				  
+				  // contraint 3
+				  for(int i=0 ; i < nville; i++) {
+					  for(int j=0 ; j < nville; j++) {
+						  for(int k=0 ; k < nville; k++) {
+							  for(int m=0 ; m < nville; m++) {
+						  IloLinearNumExpr c1 = simplexe.linearNumExpr();
+						  IloLinearNumExpr c2 = simplexe.linearNumExpr();
+
+						c1.addTerm(1, hub[k]);
+						c2.addTerm(1, flow_ijkm[i][j][k][m]);
+						simplexe.addLe(c1, c2);
+				  }}}}
+				
+				// contraint 4	  
+				  for(int i=0 ; i < nville; i++) {
+					  for(int j=0 ; j < nville; j++) {
+						  for(int k=0 ; k < nville; k++) {
+							  for(int m=0 ; m < nville; m++) {
+										  IloLinearNumExpr c1 = simplexe.linearNumExpr();
+										  IloLinearNumExpr c2 = simplexe.linearNumExpr();
+
+										c1.addTerm(1, hub[m]);
+										c2.addTerm(1, flow_ijkm[i][j][k][m]);
+										simplexe.addLe(c1, c2);
+								  }}}}
+
 
 				  
 				  
 				 
-					  simplexe.solve();
-					  System.out.println("Voici la valeur de la fonction objectif : "+simplexe.getObjValue() +"\n");
-
-					simplexe.end();
-				 
-				 
-			 }
-			 
-			 catch (IloException e){
-				 System.out.print("Exception levée " + e);
-				  }
-
-	}
-
-}
+				  simplexe.solve(); // lancer la resolution
+				// Afficher des résultat
+				} catch (IloException e){
+				System.out.print("Exception levée " + e);
+				 }
+				}
+				}
